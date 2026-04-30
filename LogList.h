@@ -20,7 +20,7 @@ public:
 
     void insertLog(string ip, int port, int count, string type, long time);
     void displayLogs();
-    void deleteOldLogs(long currentTime, long expirySeconds);
+    void deleteLogsInRange(long startTime, long endTime);
     void clear();
 
     //Attack Detection

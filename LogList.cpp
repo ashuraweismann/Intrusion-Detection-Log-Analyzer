@@ -1,4 +1,13 @@
 #include "LogList.h"
+#include <ctime>
+#include <fstream>
+#include <sstream>
+
+namespace {
+const char* RED = "\033[31m";
+const char* YELLOW = "\033[33m";
+const char* MAGENTA = "\033[35m";
+}
 
 void LogList::insertLog(string ip, int port, int count, string type, long time) {
     LogNode* newNode = new LogNode(ip, port, count, type, time);
@@ -25,9 +34,17 @@ void LogList::displayLogs() {
     }
 }
 
-void LogList::deleteOldLogs(long currentTime, long expirySeconds) {
+void LogList::deleteLogsInRange(long startTime, long endTime) {
+    if (startTime > endTime) {
+        long tempTime = startTime;
+        startTime = endTime;
+        endTime = tempTime;
+    }
+
     // Delete from beginning if needed
-    while (head != nullptr && (currentTime - head->timestamp) > expirySeconds) {
+    while (head != nullptr &&
+           head->timestamp >= startTime &&
+           head->timestamp <= endTime) {
         LogNode* temp = head;
         head = head->next;
         delete temp;
@@ -38,7 +55,8 @@ void LogList::deleteOldLogs(long currentTime, long expirySeconds) {
     // Delete in middle or end
     LogNode* curr = head;
     while (curr->next != nullptr) {
-        if ((currentTime - curr->next->timestamp) > expirySeconds) {
+        if (curr->next->timestamp >= startTime &&
+            curr->next->timestamp <= endTime) {
             LogNode* temp = curr->next;
             curr->next = temp->next;
             delete temp;
@@ -61,17 +79,27 @@ void LogList::clear() {
 
 void LogList::detectBruteForce(int threshold) {
     LogNode* temp = head;
+    bool found = false;
 
     while (temp != nullptr) {
         if (temp->attemptCount >= threshold &&
             temp->attackType == "FAILED_LOGIN") {
+            found = true;
 
-            cout << "[ALERT] Brute Force Attack Detected!\n";
+            cout << RED << "[ALERT] Brute Force Attack Detected!\n";
             cout << "IP: " << temp->srcIP
                  << " | Port: " << temp->dstPort
-                 << " | Attempts: " << temp->attemptCount << "\n\n";
+                 << " | Attempts: " << temp->attemptCount << "\n\n"
+                 << MAGENTA;
         }
         temp = temp->next;
+    }
+
+    if (!found) {
+        cout << YELLOW
+             << "[INFO] No brute force activity detected for threshold: "
+             << threshold << "\n"
+             << MAGENTA;
     }
 }
 
@@ -80,6 +108,7 @@ void LogList::detectBruteForce(int threshold) {
 
 void LogList::detectPortScan(int portThreshold) {
     LogNode* outer = head;
+    bool found = false;
 
     while (outer != nullptr) {
         int uniquePorts = 0;
@@ -94,13 +123,22 @@ void LogList::detectPortScan(int portThreshold) {
         }
 
         if (uniquePorts >= portThreshold) {
-            cout << "[ALERT] Port Scan Detected!\n";
+            found = true;
+            cout << RED << "[ALERT] Port Scan Detected!\n";
             cout << "IP: " << outer->srcIP
                  << " | Unique Ports Scanned: "
-                 << uniquePorts + 1 << "\n\n";
+                 << uniquePorts + 1 << "\n\n"
+                 << MAGENTA;
         }
 
         outer = outer->next;
+    }
+
+    if (!found) {
+        cout << YELLOW
+             << "[INFO] No port scan activity detected for threshold: "
+             << portThreshold << "\n"
+             << MAGENTA;
     }
 }
 
@@ -109,34 +147,52 @@ void LogList::detectPortScan(int portThreshold) {
 
 void LogList::detectSuspiciousActivity(int requestThreshold) {
     LogNode* outer = head;
+    bool found = false;
 
     while (outer != nullptr) {
-        int count = 0;
+        bool alreadyProcessed = false;
+        LogNode* previous = head;
+        while (previous != outer) {
+            if (previous->srcIP == outer->srcIP) {
+                alreadyProcessed = true;
+                break;
+            }
+            previous = previous->next;
+        }
+
+        if (alreadyProcessed) {
+            outer = outer->next;
+            continue;
+        }
+
+        int totalRequests = 0;
         LogNode* inner = head;
 
         while (inner != nullptr) {
             if (inner->srcIP == outer->srcIP) {
-                count++;
+                totalRequests += inner->attemptCount;
             }
             inner = inner->next;
         }
 
-        if (count >= requestThreshold) {
-            cout << "[ALERT] Suspicious Activity Detected!\n";
+        if (totalRequests >= requestThreshold) {
+            found = true;
+            cout << RED << "[ALERT] Suspicious Activity Detected!\n";
             cout << "IP: " << outer->srcIP
-                 << " | Total Requests: " << count << "\n\n";
+                 << " | Total Requests: " << totalRequests << "\n\n"
+                 << MAGENTA;
         }
 
         outer = outer->next;
     }
+
+    if (!found) {
+        cout << YELLOW
+             << "[INFO] No suspicious activity detected for threshold: "
+             << requestThreshold << "\n"
+             << MAGENTA;
+    }
 }
-
-
-//log file loader
-
-#include <fstream>
-#include <ctime>
-
 void LogList::loadFromFile(const string& filename) {
     ifstream file(filename);
     if (!file) {
@@ -144,16 +200,28 @@ void LogList::loadFromFile(const string& filename) {
         return;
     }
 
-    string ip, type;
-    int port, count;
+    string line;
+    while (getline(file, line)) {
+        if (line.empty()) {
+            continue;
+        }
 
-    while (file >> ip >> port >> count >> type) {
-        long currentTime = time(NULL);
-        insertLog(ip, port, count, type, currentTime);
+        istringstream iss(line);
+        string ip, type;
+        int port, count;
+        long timestamp;
+
+        if (!(iss >> ip >> port >> count >> type)) {
+            continue;
+        }
+
+        if (!(iss >> timestamp)) {
+            timestamp = time(NULL);
+        }
+
+        insertLog(ip, port, count, type, timestamp);
     }
 
     file.close();
     cout << "Logs loaded successfully.\n";
 }
-
-
