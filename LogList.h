@@ -3,7 +3,16 @@
 
 #include "LogNode.h"
 #include <iostream>
+#include <vector>
 using namespace std;
+
+struct LogRecord {
+    string srcIP;
+    int dstPort;
+    int attemptCount;
+    string attackType;
+    long timestamp;
+};
 
 class LogList {
 private:
@@ -22,6 +31,8 @@ public:
     void displayLogs();
     void deleteLogsInRange(long startTime, long endTime);
     void clear();
+    vector<LogRecord> getLogs() const;
+    int size() const;
 
     //Attack Detection
     void detectBruteForce(int threshold);

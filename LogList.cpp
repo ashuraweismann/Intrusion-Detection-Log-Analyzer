@@ -74,6 +74,36 @@ void LogList::clear() {
     }
 }
 
+vector<LogRecord> LogList::getLogs() const {
+    vector<LogRecord> records;
+    LogNode* temp = head;
+
+    while (temp != nullptr) {
+        records.push_back({
+            temp->srcIP,
+            temp->dstPort,
+            temp->attemptCount,
+            temp->attackType,
+            temp->timestamp
+        });
+        temp = temp->next;
+    }
+
+    return records;
+}
+
+int LogList::size() const {
+    int count = 0;
+    LogNode* temp = head;
+
+    while (temp != nullptr) {
+        count++;
+        temp = temp->next;
+    }
+
+    return count;
+}
+
 
 //1. Brute Force Detection
 
