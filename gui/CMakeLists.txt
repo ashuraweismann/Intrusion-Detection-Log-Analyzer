@@ -13,6 +13,7 @@ qt_add_executable(ShadowIDS_GUI
     main_gui.cpp
     MainWindow.cpp
     MainWindow.h
+    ../CustomQueue.h
     ../LogList.cpp
     ../LogList.h
     ../LogNode.h

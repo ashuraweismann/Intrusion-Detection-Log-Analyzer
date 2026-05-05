@@ -345,6 +345,12 @@
 	"HEADERS" : 
 	[
 		[
+			"E:/Data structures and Algorithms/DSA_Project/CustomQueue.h",
+			"MU",
+			"AJEFAOS2KK/moc_CustomQueue.cpp",
+			null
+		],
+		[
 			"E:/Data structures and Algorithms/DSA_Project/LogList.h",
 			"MU",
 			"AJEFAOS2KK/moc_LogList.cpp",

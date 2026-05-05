@@ -8,10 +8,10 @@
 #include <QTableWidget>
 #include <QTimer>
 
+#include "../CustomQueue.h"
 #include "../LogList.h"
 
 #include <cstdint>
-#include <queue>
 
 struct PacketRecord {
     long timestamp;
@@ -71,8 +71,8 @@ private:
     QPlainTextEdit *alertOutput;
     QTimer *simulationTimer;
     QTimer *packetReplayTimer;
-    std::queue<LogRecord> simulationQueue;
-    std::queue<PacketRecord> packetReplayQueue;
+    CustomQueue<LogRecord> simulationQueue;
+    CustomQueue<PacketRecord> packetReplayQueue;
     QVector<LogRecord> simulatedRecords;
     QVector<PacketRecord> packetRecords;
     QVector<PacketRecord> displayedPackets;

@@ -1006,15 +1006,11 @@ void MainWindow::setSimulationControls(bool playing) {
 }
 
 void MainWindow::clearSimulationQueue() {
-    while (!simulationQueue.empty()) {
-        simulationQueue.pop();
-    }
+    simulationQueue.clear();
 }
 
 void MainWindow::clearPacketReplayQueue() {
-    while (!packetReplayQueue.empty()) {
-        packetReplayQueue.pop();
-    }
+    packetReplayQueue.clear();
 }
 
 bool MainWindow::loadPacketsFromPcap(const QString &fileName, QString &errorMessage) {
