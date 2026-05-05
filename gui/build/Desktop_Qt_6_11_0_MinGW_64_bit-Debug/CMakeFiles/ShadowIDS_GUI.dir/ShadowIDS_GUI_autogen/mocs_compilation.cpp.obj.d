@@ -432,6 +432,9 @@ CMakeFiles/ShadowIDS_GUI.dir/ShadowIDS_GUI_autogen/mocs_compilation.cpp.obj: \
  E:/Program_files/6.11.0/mingw_64/include/QtGui/qglyphrun.h \
  E:/Program_files/6.11.0/mingw_64/include/QtGui/qrawfont.h \
  E:/Program_files/6.11.0/mingw_64/include/QtGui/qfontdatabase.h \
+ E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QPushButton \
+ E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qpushbutton.h \
+ E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractbutton.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QTableWidget \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qtablewidget.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qtableview.h \
@@ -448,6 +451,8 @@ CMakeFiles/ShadowIDS_GUI.dir/ShadowIDS_GUI_autogen/mocs_compilation.cpp.obj: \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qstyle.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qtabbar.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qrubberband.h \
+ E:/Program_files/6.11.0/mingw_64/include/QtCore/QTimer \
+ E:/Program_files/6.11.0/mingw_64/include/QtCore/qtimer.h \
  E:/Data\ structures\ and\ Algorithms/DSA_Project/LogList.h \
  E:/Data\ structures\ and\ Algorithms/DSA_Project/LogNode.h \
  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
@@ -464,6 +469,11 @@ CMakeFiles/ShadowIDS_GUI.dir/ShadowIDS_GUI_autogen/mocs_compilation.cpp.obj: \
  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
+ E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
+ E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
+ E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
+ E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
  E:/Program_files/6.11.0/mingw_64/include/QtCore/qtmochelpers.h \
  E:/Program_files/6.11.0/mingw_64/include/QtCore/qtmocconstants.h \
  E:/Program_files/6.11.0/mingw_64/include/QtCore/q20algorithm.h

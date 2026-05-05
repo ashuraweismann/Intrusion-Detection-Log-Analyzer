@@ -7,6 +7,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QRect \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QSize \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QSizeF \
+  E:/Program_files/6.11.0/mingw_64/include/QtCore/QTimer \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/q17memory.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/q20bit.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/q20functional.h \
@@ -132,6 +133,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtextstream.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtformat_impl.h \
+  E:/Program_files/6.11.0/mingw_64/include/QtCore/qtimer.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtmetamacros.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtnoop.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -201,7 +203,9 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QLineEdit \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QMainWindow \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QPlainTextEdit \
+  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QPushButton \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QTableWidget \
+  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractbutton.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractitemview.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -211,6 +215,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qlineedit.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qmainwindow.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qplaintextedit.h \
+  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qpushbutton.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qrubberband.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qslider.h \
@@ -249,6 +254,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_init_exception.h \
+  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
@@ -293,6 +299,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h \
+  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator.h \
@@ -304,6 +311,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
+  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_raw_storage_iter.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -342,6 +350,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
+  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \
@@ -370,6 +379,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_Min
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
+  E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   E:/Program_files/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdexcept \
