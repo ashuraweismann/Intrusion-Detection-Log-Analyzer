@@ -1,0 +1,5 @@
+E:/Data structures and Algorithms/DSA_Project/gui/build/Release-Deploy/CMakeFiles/ShadowIDS_GUI.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Release-Deploy/CMakeFiles/edit_cache.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Release-Deploy/CMakeFiles/rebuild_cache.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Release-Deploy/CMakeFiles/ShadowIDS_GUI_autogen_timestamp_deps.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Release-Deploy/CMakeFiles/ShadowIDS_GUI_autogen.dir

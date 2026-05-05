@@ -1,0 +1,5 @@
+E:/Data structures and Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/ShadowIDS_GUI.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/ShadowIDS_GUI_autogen_timestamp_deps.dir
+E:/Data structures and Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/ShadowIDS_GUI_autogen.dir
