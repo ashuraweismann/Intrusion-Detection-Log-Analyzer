@@ -45,7 +45,10 @@ Traditional log files can be difficult to inspect manually because they may cont
 | `LogNode.h` | Defines one linked list node for a log record |
 | `LogList.h` | Declares linked list operations and detection methods |
 | `LogList.cpp` | Implements linked list operations and attack detection |
+| `AttackAnalyzer.h` | Declares hash-table based attack analysis functions |
+| `AttackAnalyzer.cpp` | Implements improved port scan and suspicious activity detection |
 | `CustomQueue.h` | Implements a custom queue without using STL queue |
+| `CustomHashTable.h` | Implements custom hash table and hash set structures |
 | `gui/MainWindow.h` | Declares the Qt GUI window and GUI data members |
 | `gui/MainWindow.cpp` | Implements GUI, PCAP loading, simulation, and replay |
 | `gui/CMakeLists.txt` | GUI build configuration |
@@ -226,17 +229,26 @@ Network packets arrive in order over time. A queue is the correct data structure
 
 ## 7.3 Hash Tables
 
-Hash tables are used when rebuilding IDS summary logs from PCAP packets.
+Hash tables are used for attack analysis and when rebuilding IDS summary logs from PCAP packets.
 
-The GUI uses unordered maps and unordered sets to group packet data efficiently.
+The project includes a separate custom hash table file:
+
+- `CustomHashTable.h`
+
+This file contains:
+
+- `IntHashSet`
+- `IPStatsHashTable`
+- `IPStatsRecord`
+
+`IntHashSet` stores unique destination ports. `IPStatsHashTable` stores IP-based statistics such as total requests and unique port count.
 
 Examples:
 
 ```cpp
-unordered_map<string, int> counts;
-unordered_map<string, long> firstSeen;
-unordered_map<string, int> synCounts;
-unordered_map<string, unordered_set<int>> uniquePortsByIP;
+IPStatsHashTable ipStats;
+ipStats.addPort(record.srcIP, record.dstPort);
+ipStats.addRequest(record.srcIP, record.attemptCount);
 ```
 
 ### How Hash Tables Are Used
@@ -311,6 +323,12 @@ Build command:
 E:\Program_files\Tools\CMake_64\bin\cmake.exe --build gui\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug
 ```
 
+Console compile command:
+
+```bash
+g++ main.cpp LogList.cpp AttackAnalyzer.cpp -o ids
+```
+
 The build completed successfully.
 
 Tested features include:
@@ -346,4 +364,3 @@ Tested features include:
 Shadow IDS demonstrates how data structures can be applied to a real cybersecurity problem. The linked list stores intrusion logs, the custom queue simulates real-time packet and log arrival, and hash tables help group packet activity for fast detection.
 
 The project successfully combines data structures, file processing, PCAP parsing, attack detection, and GUI development into one practical intrusion detection log analyzer.
-

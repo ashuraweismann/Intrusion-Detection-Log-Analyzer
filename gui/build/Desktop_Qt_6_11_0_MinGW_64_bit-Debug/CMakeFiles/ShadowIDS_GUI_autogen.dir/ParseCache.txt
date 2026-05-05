@@ -2,6 +2,7 @@
 E:/Data structures and Algorithms/DSA_Project/LogList.h
 E:/Data structures and Algorithms/DSA_Project/CustomQueue.h
 E:/Data structures and Algorithms/DSA_Project/LogNode.h
+E:/Data structures and Algorithms/DSA_Project/AttackAnalyzer.h
 E:/Data structures and Algorithms/DSA_Project/gui/MainWindow.h
  mmc:Q_OBJECT
  mdp:E:/Data structures and Algorithms/DSA_Project/CustomQueue.h
@@ -467,3 +468,5 @@ E:/Data structures and Algorithms/DSA_Project/gui/MainWindow.h
 E:/Data structures and Algorithms/DSA_Project/LogList.cpp
 E:/Data structures and Algorithms/DSA_Project/gui/MainWindow.cpp
 E:/Data structures and Algorithms/DSA_Project/gui/main_gui.cpp
+E:/Data structures and Algorithms/DSA_Project/AttackAnalyzer.cpp
+E:/Data structures and Algorithms/DSA_Project/CustomHashTable.h

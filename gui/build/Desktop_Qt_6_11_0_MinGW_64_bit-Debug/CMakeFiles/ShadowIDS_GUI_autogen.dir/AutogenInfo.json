@@ -345,6 +345,18 @@
 	"HEADERS" : 
 	[
 		[
+			"E:/Data structures and Algorithms/DSA_Project/AttackAnalyzer.h",
+			"MU",
+			"AJEFAOS2KK/moc_AttackAnalyzer.cpp",
+			null
+		],
+		[
+			"E:/Data structures and Algorithms/DSA_Project/CustomHashTable.h",
+			"MU",
+			"AJEFAOS2KK/moc_CustomHashTable.cpp",
+			null
+		],
+		[
 			"E:/Data structures and Algorithms/DSA_Project/CustomQueue.h",
 			"MU",
 			"AJEFAOS2KK/moc_CustomQueue.cpp",
@@ -440,6 +452,11 @@
 	"SETTINGS_FILE" : "E:/Data structures and Algorithms/DSA_Project/gui/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/ShadowIDS_GUI_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"E:/Data structures and Algorithms/DSA_Project/AttackAnalyzer.cpp",
+			"MU",
+			null
+		],
 		[
 			"E:/Data structures and Algorithms/DSA_Project/LogList.cpp",
 			"MU",

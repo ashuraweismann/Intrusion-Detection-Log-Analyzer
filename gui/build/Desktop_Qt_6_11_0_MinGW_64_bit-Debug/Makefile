@@ -154,6 +154,30 @@ ShadowIDS_GUI_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ShadowIDS_GUI_autogen.dir\build.make CMakeFiles/ShadowIDS_GUI_autogen.dir/build
 .PHONY : ShadowIDS_GUI_autogen/fast
 
+E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.obj: E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.obj
+.PHONY : E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.obj
+
+# target to build an object file
+E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ShadowIDS_GUI.dir\build.make CMakeFiles/ShadowIDS_GUI.dir/E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.obj
+.PHONY : E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.obj
+
+E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.i: E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.i
+.PHONY : E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.i
+
+# target to preprocess a source file
+E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ShadowIDS_GUI.dir\build.make CMakeFiles/ShadowIDS_GUI.dir/E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.i
+.PHONY : E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.i
+
+E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.s: E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.s
+.PHONY : E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.s
+
+# target to generate assembly for a file
+E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ShadowIDS_GUI.dir\build.make CMakeFiles/ShadowIDS_GUI.dir/E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.s
+.PHONY : E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.cpp.s
+
 E_/Data_structures_and_Algorithms/DSA_Project/LogList.obj: E_/Data_structures_and_Algorithms/DSA_Project/LogList.cpp.obj
 .PHONY : E_/Data_structures_and_Algorithms/DSA_Project/LogList.obj
 
@@ -261,6 +285,9 @@ help:
 	@echo ... ShadowIDS_GUI_autogen
 	@echo ... ShadowIDS_GUI_autogen_timestamp_deps
 	@echo ... ShadowIDS_GUI
+	@echo ... E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.obj
+	@echo ... E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.i
+	@echo ... E_/Data_structures_and_Algorithms/DSA_Project/AttackAnalyzer.s
 	@echo ... E_/Data_structures_and_Algorithms/DSA_Project/LogList.obj
 	@echo ... E_/Data_structures_and_Algorithms/DSA_Project/LogList.i
 	@echo ... E_/Data_structures_and_Algorithms/DSA_Project/LogList.s
