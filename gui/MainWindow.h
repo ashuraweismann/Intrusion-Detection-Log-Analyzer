@@ -8,8 +8,8 @@
 #include <QTableWidget>
 #include <QTimer>
 
-#include "../CustomQueue.h"
-#include "../LogList.h"
+#include "CustomQueue.h"
+#include "LogList.h"
 
 #include <cstdint>
 

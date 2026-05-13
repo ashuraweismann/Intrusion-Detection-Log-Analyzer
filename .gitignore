@@ -1,0 +1,26 @@
+# Build outputs
+bin/
+build/
+*.exe
+*.o
+*.a
+*.out
+
+# Qt / CMake build artifacts
+gui/build/
+gui/.qtcreator/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*_autogen/
+
+# IDE & OS
+.vscode/settings.json
+*.user
+.DS_Store
+Thumbs.db
+
+# Runtime files
+logs.txt
+*.log
