@@ -1,4 +1,5 @@
 #include "LogList.h"
+#include "AttackAnalyzer.h"
 #include <ctime>
 #include <fstream>
 #include <sstream>
@@ -137,38 +138,19 @@ void LogList::detectBruteForce(int threshold) {
 //2. Port Scan Detection
 
 void LogList::detectPortScan(int portThreshold) {
-    LogNode* outer = head;
-    bool found = false;
+    vector<string> alerts = AttackAnalyzer::findPortScans(getLogs(), portThreshold);
 
-    while (outer != nullptr) {
-        int uniquePorts = 0;
-        LogNode* inner = head;
-
-        while (inner != nullptr) {
-            if (inner->srcIP == outer->srcIP &&
-                inner->dstPort != outer->dstPort) {
-                uniquePorts++;
-            }
-            inner = inner->next;
-        }
-
-        if (uniquePorts >= portThreshold) {
-            found = true;
-            cout << RED << "[ALERT] Port Scan Detected!\n";
-            cout << "IP: " << outer->srcIP
-                 << " | Unique Ports Scanned: "
-                 << uniquePorts + 1 << "\n\n"
-                 << MAGENTA;
-        }
-
-        outer = outer->next;
-    }
-
-    if (!found) {
+    if (alerts.empty()) {
         cout << YELLOW
              << "[INFO] No port scan activity detected for threshold: "
              << portThreshold << "\n"
              << MAGENTA;
+        return;
+    }
+
+    for (const string& alert : alerts) {
+        cout << RED << "[ALERT] Port Scan Detected!\n";
+        cout << alert << "\n\n" << MAGENTA;
     }
 }
 
@@ -176,51 +158,19 @@ void LogList::detectPortScan(int portThreshold) {
 //3. Suspicious Activity Detection
 
 void LogList::detectSuspiciousActivity(int requestThreshold) {
-    LogNode* outer = head;
-    bool found = false;
+    vector<string> alerts = AttackAnalyzer::findSuspiciousActivity(getLogs(), requestThreshold);
 
-    while (outer != nullptr) {
-        bool alreadyProcessed = false;
-        LogNode* previous = head;
-        while (previous != outer) {
-            if (previous->srcIP == outer->srcIP) {
-                alreadyProcessed = true;
-                break;
-            }
-            previous = previous->next;
-        }
-
-        if (alreadyProcessed) {
-            outer = outer->next;
-            continue;
-        }
-
-        int totalRequests = 0;
-        LogNode* inner = head;
-
-        while (inner != nullptr) {
-            if (inner->srcIP == outer->srcIP) {
-                totalRequests += inner->attemptCount;
-            }
-            inner = inner->next;
-        }
-
-        if (totalRequests >= requestThreshold) {
-            found = true;
-            cout << RED << "[ALERT] Suspicious Activity Detected!\n";
-            cout << "IP: " << outer->srcIP
-                 << " | Total Requests: " << totalRequests << "\n\n"
-                 << MAGENTA;
-        }
-
-        outer = outer->next;
-    }
-
-    if (!found) {
+    if (alerts.empty()) {
         cout << YELLOW
              << "[INFO] No suspicious activity detected for threshold: "
              << requestThreshold << "\n"
              << MAGENTA;
+        return;
+    }
+
+    for (const string& alert : alerts) {
+        cout << RED << "[ALERT] Suspicious Activity Detected!\n";
+        cout << alert << "\n\n" << MAGENTA;
     }
 }
 void LogList::loadFromFile(const string& filename) {
