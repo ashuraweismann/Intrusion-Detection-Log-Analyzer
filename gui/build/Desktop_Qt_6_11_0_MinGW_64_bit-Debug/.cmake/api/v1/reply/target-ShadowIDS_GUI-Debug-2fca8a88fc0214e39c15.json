@@ -336,11 +336,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ShadowIDS_GUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "ShadowIDS_GUI_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "ShadowIDS_GUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ShadowIDS_GUI::@6890427a1f51a3e7e1df",

@@ -429,6 +429,9 @@ CMakeFiles/ShadowIDS_GUI.dir/main_gui.cpp.obj: \
  E:/Program_files/6.11.0/mingw_64/include/QtGui/qglyphrun.h \
  E:/Program_files/6.11.0/mingw_64/include/QtGui/qrawfont.h \
  E:/Program_files/6.11.0/mingw_64/include/QtGui/qfontdatabase.h \
+ E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QPushButton \
+ E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qpushbutton.h \
+ E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractbutton.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QTableWidget \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qtablewidget.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qtableview.h \
@@ -445,6 +448,9 @@ CMakeFiles/ShadowIDS_GUI.dir/main_gui.cpp.obj: \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qstyle.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qtabbar.h \
  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qrubberband.h \
+ E:/Program_files/6.11.0/mingw_64/include/QtCore/QTimer \
+ E:/Program_files/6.11.0/mingw_64/include/QtCore/qtimer.h \
+ E:/Data\ structures\ and\ Algorithms/DSA_Project/CustomQueue.h \
  E:/Data\ structures\ and\ Algorithms/DSA_Project/LogList.h \
  E:/Data\ structures\ and\ Algorithms/DSA_Project/LogNode.h \
  C:/msys64/ucrt64/include/c++/14.2.0/iostream \

@@ -227,6 +227,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Release-Deploy/Shadow
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  E:/Data\ structures\ and\ Algorithms/DSA_Project/CustomQueue.h \
   E:/Data\ structures\ and\ Algorithms/DSA_Project/LogList.h \
   E:/Data\ structures\ and\ Algorithms/DSA_Project/LogNode.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QList \
@@ -234,6 +235,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Release-Deploy/Shadow
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QRect \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QSize \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/QSizeF \
+  E:/Program_files/6.11.0/mingw_64/include/QtCore/QTimer \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/q17memory.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/q20bit.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/q20functional.h \
@@ -359,6 +361,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Release-Deploy/Shadow
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtextstream.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtformat_impl.h \
+  E:/Program_files/6.11.0/mingw_64/include/QtCore/qtimer.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtmetamacros.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtnoop.h \
   E:/Program_files/6.11.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -428,7 +431,9 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Release-Deploy/Shadow
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QLineEdit \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QMainWindow \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QPlainTextEdit \
+  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QPushButton \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/QTableWidget \
+  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractbutton.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractitemview.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -438,6 +443,7 @@ E:/Data\ structures\ and\ Algorithms/DSA_Project/gui/build/Release-Deploy/Shadow
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qlineedit.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qmainwindow.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qplaintextedit.h \
+  E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qpushbutton.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qrubberband.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   E:/Program_files/6.11.0/mingw_64/include/QtWidgets/qslider.h \
