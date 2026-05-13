@@ -6,7 +6,7 @@
 
 Shadow IDS is a C++ intrusion detection and packet analysis project. The system reads security logs or packet capture files, analyzes suspicious network behavior, and displays results through both a console interface and a Qt-based graphical user interface.
 
-The main purpose of the project is to demonstrate how data structures can be used in a practical cybersecurity application. The project uses a linked list for storing logs, a custom queue for real-time simulation, and hash tables for fast packet grouping and attack classification.
+The main purpose of the project is to demonstrate how data structures can be used in a practical cybersecurity application. The project uses a linked list for storing logs, a custom queue for real-time simulation, and standard-library hash tables for fast packet grouping and attack classification.
 
 ## 2. Problem Statement
 
@@ -35,7 +35,7 @@ Traditional log files can be difficult to inspect manually because they may cont
 - Data structures:
   - Linked List
   - Custom Queue
-  - Hash Tables
+  - Standard Hash Tables (`std::unordered_map` and `std::unordered_set`)
 
 ## 5. Main Project Files
 
@@ -46,9 +46,8 @@ Traditional log files can be difficult to inspect manually because they may cont
 | `LogList.h` | Declares linked list operations and detection methods |
 | `LogList.cpp` | Implements linked list operations and attack detection |
 | `AttackAnalyzer.h` | Declares hash-table based attack analysis functions |
-| `AttackAnalyzer.cpp` | Implements improved port scan and suspicious activity detection |
+| `AttackAnalyzer.cpp` | Implements improved port scan and suspicious activity detection using standard hash tables |
 | `CustomQueue.h` | Implements a custom queue without using STL queue |
-| `CustomHashTable.h` | Implements custom hash table and hash set structures |
 | `gui/MainWindow.h` | Declares the Qt GUI window and GUI data members |
 | `gui/MainWindow.cpp` | Implements GUI, PCAP loading, simulation, and replay |
 | `gui/CMakeLists.txt` | GUI build configuration |
@@ -231,24 +230,26 @@ Network packets arrive in order over time. A queue is the correct data structure
 
 Hash tables are used for attack analysis and when rebuilding IDS summary logs from PCAP packets.
 
-The project includes a separate custom hash table file:
+The project uses C++ standard-library hash containers:
 
-- `CustomHashTable.h`
+- `std::unordered_map`
+- `std::unordered_set`
 
-This file contains:
+These containers are included from:
 
-- `IntHashSet`
-- `IPStatsHashTable`
-- `IPStatsRecord`
+- `<unordered_map>`
+- `<unordered_set>`
 
-`IntHashSet` stores unique destination ports. `IPStatsHashTable` stores IP-based statistics such as total requests and unique port count.
+`std::unordered_set<int>` stores unique destination ports for each source IP. `std::unordered_map<std::string, int>` stores total request counts by source IP.
 
 Examples:
 
 ```cpp
-IPStatsHashTable ipStats;
-ipStats.addPort(record.srcIP, record.dstPort);
-ipStats.addRequest(record.srcIP, record.attemptCount);
+std::unordered_map<std::string, std::unordered_set<int>> portsByIP;
+std::unordered_map<std::string, int> requestsByIP;
+
+portsByIP[record.srcIP].insert(record.dstPort);
+requestsByIP[record.srcIP] += record.attemptCount;
 ```
 
 ### How Hash Tables Are Used
@@ -276,7 +277,7 @@ When a PCAP file is loaded:
 6. TCP, UDP, and ICMP packets are identified.
 7. Packet data is stored as `PacketRecord`.
 8. Packet records are displayed in the GUI table.
-9. Hash tables are used to create IDS summary logs.
+9. Standard hash tables are used to create IDS summary logs.
 10. Detection algorithms can be run on the generated summaries.
 
 ## 9. Simulation Flow
@@ -361,6 +362,6 @@ Tested features include:
 
 ## 14. Conclusion
 
-Shadow IDS demonstrates how data structures can be applied to a real cybersecurity problem. The linked list stores intrusion logs, the custom queue simulates real-time packet and log arrival, and hash tables help group packet activity for fast detection.
+Shadow IDS demonstrates how data structures can be applied to a real cybersecurity problem. The linked list stores intrusion logs, the custom queue simulates real-time packet and log arrival, and standard-library hash tables help group packet activity for fast detection.
 
 The project successfully combines data structures, file processing, PCAP parsing, attack detection, and GUI development into one practical intrusion detection log analyzer.

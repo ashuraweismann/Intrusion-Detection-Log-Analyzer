@@ -21,8 +21,7 @@ Shared files:
 | `LogList.h` | Declares linked list operations and detection methods |
 | `LogList.cpp` | Implements log storage and detection function calls |
 | `AttackAnalyzer.h` | Declares attack analysis helper functions |
-| `AttackAnalyzer.cpp` | Uses the custom hash table for improved detection |
-| `CustomHashTable.h` | Implements hash table and hash set logic |
+| `AttackAnalyzer.cpp` | Uses standard-library hash tables for improved detection |
 
 The CLI uses this backend from:
 
@@ -75,7 +74,7 @@ CLI mode is simple and menu based.
 | Detect suspicious activity | Yes |
 | Delete logs by time range | Yes |
 | Use linked list for log storage | Yes |
-| Use custom hash table for detection | Yes |
+| Use standard hash tables for detection | Yes |
 | Load PCAP directly | No |
 | View individual packets | No |
 | Real-time packet replay | No |
@@ -107,7 +106,7 @@ GUI mode includes all main CLI detection features and adds visual features.
 | Reload current file | Yes |
 | Colored severity display | Yes |
 
-GUI mode is useful for demonstrating the complete project with linked list, queue, and hash table data structures.
+GUI mode is useful for demonstrating the complete project with linked list, queue, and standard hash table data structures.
 
 ## 6. CLI vs GUI Feature Table
 
@@ -120,7 +119,7 @@ GUI mode is useful for demonstrating the complete project with linked list, queu
 | Detect suspicious activity | Yes | Yes |
 | Delete logs by time range | Yes | Yes |
 | Linked list log storage | Yes | Yes |
-| Custom hash table detection | Yes | Yes |
+| Standard hash table detection | Yes | Yes |
 | Direct PCAP loading | No | Yes |
 | Individual packet view | No | Yes |
 | Wireshark-style packet table | No | Yes |
@@ -139,7 +138,7 @@ GUI mode is useful for demonstrating the complete project with linked list, queu
 CLI mode uses:
 
 - Linked list for storing logs
-- Custom hash table for improved detection
+- Standard hash tables for improved detection
 
 Main files:
 
@@ -149,7 +148,6 @@ LogList.h
 LogList.cpp
 AttackAnalyzer.h
 AttackAnalyzer.cpp
-CustomHashTable.h
 ```
 
 ## GUI Mode
@@ -157,7 +155,7 @@ CustomHashTable.h
 GUI mode uses:
 
 - Linked list for storing logs
-- Custom hash table for detection
+- Standard hash tables for detection
 - Custom queue for real-time replay
 
 Main files:
@@ -166,7 +164,6 @@ Main files:
 gui/MainWindow.h
 gui/MainWindow.cpp
 CustomQueue.h
-CustomHashTable.h
 LogList.h
 LogList.cpp
 AttackAnalyzer.h
@@ -182,7 +179,7 @@ The CLI is the basic version of the IDS. It loads logs, stores them in a linked 
 
 The GUI is the advanced version. It uses the same backend logic as the CLI, but adds direct PCAP loading, packet viewing, filtering, report exporting, and real-time replay.
 
-The linked list stores logs, the custom hash table groups IP activity for detection, and the custom queue releases packets or logs one by one during simulation.
+The linked list stores logs, standard-library hash tables group IP activity for detection, and the custom queue releases packets or logs one by one during simulation.
 ```
 
 ## 9. Conclusion
@@ -190,4 +187,3 @@ The linked list stores logs, the custom hash table groups IP activity for detect
 The CLI and GUI are not separate projects. They are two interfaces for the same IDS system.
 
 The CLI is useful for showing core logic clearly. The GUI is useful for showing the complete system with visual packet analysis and real-time simulation.
-

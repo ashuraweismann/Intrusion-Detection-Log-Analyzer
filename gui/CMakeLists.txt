@@ -14,7 +14,6 @@ qt_add_executable(ShadowIDS_GUI
     MainWindow.cpp
     MainWindow.h
     ../CustomQueue.h
-    ../CustomHashTable.h
     ../AttackAnalyzer.cpp
     ../AttackAnalyzer.h
     ../LogList.cpp

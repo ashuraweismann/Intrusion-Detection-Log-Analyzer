@@ -1,21 +1,23 @@
 #include "AttackAnalyzer.h"
-#include "CustomHashTable.h"
+
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
 vector<string> AttackAnalyzer::findPortScans(const vector<LogRecord>& records, int portThreshold) {
-    IPStatsHashTable ipStats;
+    unordered_map<string, unordered_set<int>> portsByIP;
 
     for (const LogRecord& record : records) {
-        ipStats.addPort(record.srcIP, record.dstPort);
+        portsByIP[record.srcIP].insert(record.dstPort);
     }
 
     vector<string> alerts;
-    for (const IPStatsRecord& record : ipStats.getRecords()) {
-        if (record.uniquePortCount >= portThreshold) {
+    for (const auto& entry : portsByIP) {
+        if (static_cast<int>(entry.second.size()) >= portThreshold) {
             alerts.push_back(
-                "IP: " + record.ip +
-                " | Unique Ports Scanned: " + to_string(record.uniquePortCount)
+                "IP: " + entry.first +
+                " | Unique Ports Scanned: " + to_string(entry.second.size())
             );
         }
     }
@@ -24,18 +26,18 @@ vector<string> AttackAnalyzer::findPortScans(const vector<LogRecord>& records, i
 }
 
 vector<string> AttackAnalyzer::findSuspiciousActivity(const vector<LogRecord>& records, int requestThreshold) {
-    IPStatsHashTable ipStats;
+    unordered_map<string, int> requestsByIP;
 
     for (const LogRecord& record : records) {
-        ipStats.addRequest(record.srcIP, record.attemptCount);
+        requestsByIP[record.srcIP] += record.attemptCount;
     }
 
     vector<string> alerts;
-    for (const IPStatsRecord& record : ipStats.getRecords()) {
-        if (record.totalRequests >= requestThreshold) {
+    for (const auto& entry : requestsByIP) {
+        if (entry.second >= requestThreshold) {
             alerts.push_back(
-                "IP: " + record.ip +
-                " | Total Requests: " + to_string(record.totalRequests)
+                "IP: " + entry.first +
+                " | Total Requests: " + to_string(entry.second)
             );
         }
     }
